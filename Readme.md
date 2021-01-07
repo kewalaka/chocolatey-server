@@ -1,10 +1,12 @@
+[![Docker Image Build](https://github.com/kewalaka/chocolatey-server/workflows/Docker%20Image%20Build/badge.svg)](https://github.com/kewalaka/chocolatey-server/actions)
+
 # Chocolatey server #
 
 This repo contains a Dockerfile for the 'simple' [chocolatey server](https://docs.chocolatey.org/en-us/guides/organizations/set-up-chocolatey-server).
 
 It provides a basic NuGet server that can be used to serve chocolatey packages.
 
-Need to use Windows containers Pfor this, as it has a dependency on .Net Framework 4.x, which is Windows only.
+Need to use Windows containers for this, as it has a dependency on .Net Framework 4.x, which is Windows only.
 
 ## Build
 
@@ -17,7 +19,7 @@ docker build . -t chocolateyserver
 ## Run
 
 ```powershell
-# run on localhost:80 interactively:
+# run on localhost:80:
 docker run --rm -p 80:80 chocolateyserver:latest
 
 # run on localhost:8000 interactively:
