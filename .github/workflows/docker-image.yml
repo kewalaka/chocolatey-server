@@ -1,4 +1,4 @@
-name: Docker Image Build
+name: Build & Tests
 
 on:
   push:
@@ -15,4 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag chocolatey-server:$(date +%s)
+      run: docker-compose up -d
+
+    - name: Run tests
+      run: Invoke-Pester -Path .\Tests -Output Detailed

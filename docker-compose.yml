@@ -1,0 +1,7 @@
+version: '3'
+services:
+  web:
+    container_name: chocolatey-server
+    build: .
+    ports:
+      - "8000:80"

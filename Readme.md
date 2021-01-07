@@ -1,4 +1,4 @@
-[![Docker Image Build](https://github.com/kewalaka/chocolatey-server/workflows/Docker%20Image%20Build/badge.svg)](https://github.com/kewalaka/chocolatey-server/actions)
+[![Docker Image Build](https://github.com/kewalaka/chocolatey-server/workflows/Build%20%26%20Tests/badge.svg)](https://github.com/kewalaka/chocolatey-server/actions)
 
 # Chocolatey server #
 

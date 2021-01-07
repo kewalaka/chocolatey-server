@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>testpackage</id>
+    <version>1.0.0.20200107</version>
+    <title>Test Package</title>
+    <authors>kewalaka</authors>
+    <owners>kewalaka</owners>
+    <description>## Test Package
+    This package does not much, it is used to test the chocolatey server docker package.
+    </description>
+    <tags>testing</tags>
+    <projectSourceUrl>https://github.com/kewalaka/chocolatey-server</projectSourceUrl>
+    <packageSourceUrl>https://github.com/kewalaka/chocolatey-server/Tests/Test-Package</packageSourceUrl>
+  </metadata>
+</package>

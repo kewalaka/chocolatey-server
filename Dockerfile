@@ -1,5 +1,7 @@
 FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8
 
+LABEL maintainer="kewalaka@gmail.com"
+
 ENV chocolateyUseWindowsCompression false
 
 RUN powershell -NoProfile -Command \
