@@ -1,8 +1,6 @@
 BeforeAll {
     # create a package to push to the chocolatey server
     Invoke-Expression -Command 'choco pack .\Tests\TestPackage\TestPackage.nuspec'
-    # start the docker image just built 
-    docker run --name chocolateyserver --rm -d -p 8000:80 chocolateyserver:latest
     # get more useful info from chocolatey exit codes
     choco feature enable -n useEnhancedExitCodes
 }
@@ -99,6 +97,5 @@ Describe "Chocolatey Server tests" {
 }
 
 AfterAll {
-    # tidy up, keep the local dev environment clean
-    docker container rm chocolateyserver -f
+    # nothing to do
 }
