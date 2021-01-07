@@ -9,11 +9,11 @@ Describe "Chocolatey Server tests" {
     Context "Web server" {       
         It "returns status code 200" {
             try {
-                $r = Invoke-WebRequest -UseBasicParsing http://localhost:8000  -TimeoutSec 15
+                $r = Invoke-WebRequest -UseBasicParsing http://localhost:8000  -TimeoutSec 30
                 # give IIS chance to wake up
                 if ($null -eq $r.StatusCode) {
-                    Start-Sleep -Seconds 3
-                    $r = Invoke-WebRequest -UseBasicParsing http://localhost:8000  -TimeoutSec 15
+                    Start-Sleep -Seconds 5
+                    $r = Invoke-WebRequest -UseBasicParsing http://localhost:8000  -TimeoutSec 30
                 }
             }
             catch {}
