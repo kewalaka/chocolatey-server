@@ -19,10 +19,10 @@ docker build . -t chocolateyserver
 ## Run
 
 ```powershell
-# run on localhost:80:
-docker run --rm -p 80:80 chocolateyserver:latest
+# run detached on localhost:80:
+docker run --name chocolatey.server --rm -d -p 80:80 chocolateyserver:latest
 
-# run on localhost:8000 interactively:
+# run on localhost:8000 interactively using a dynamic name:
 docker run --rm -it -p 8000:80 chocolateyserver:latest
 ```
 
@@ -33,11 +33,6 @@ docker run --rm -it -p 8000:80 chocolateyserver:latest
 docker container ls
 # attach to a powershell process in the container 
 docker exec -it <containerID> powershell 
-```
-
-```powershell
-#get a powershell prompt:
-docker exec -it -p 8000:80 chocolateyserver:latest
 ```
 
 ## Tidy
