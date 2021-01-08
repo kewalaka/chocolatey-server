@@ -11,17 +11,20 @@ on:
 jobs:
   docker:
     runs-on: windows-2019
+    environment: prod
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
       - name: Build and push
+        shell: pwsh
         working-directory: .
-        run: |
-          docker login -u $env:USER -p $env:TOKEN
-          docker build . --file Dockerfile --tag chocolatey-server:v0.2.5
-          docker image push kewalaka/chocolatey-server:0.2.5
-          docker logout
         env:
           USER: ${{ secrets.DOCKER_HUB_USERNAME }}
-          TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+          TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}        
+        run: |
+          docker login -u $env:USER -p $env:TOKEN
+          docker build . --file Dockerfile --tag chocolatey-server:0.2.5
+          docker image push kewalaka/chocolatey-server:0.2.5
+          docker logout
+
