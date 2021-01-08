@@ -16,7 +16,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build and push
-        target: prod
         working-directory: .
         run: |
           docker login -u $env:USER -p $env:TOKEN
