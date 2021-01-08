@@ -11,7 +11,7 @@ RUN powershell -NoProfile -Command \
 
 RUN powershell -NoProfile -Command \
     choco feature disable --name showDownloadProgress; \
-    choco install chocolatey.server -y; \
+    choco install chocolatey.server -y --version=0.2.5; \
     Remove-Item -Path C:\tools\chocolatey.server\App_Data\Packages\Readme.txt
 
 RUN powershell -NoProfile -Command \
