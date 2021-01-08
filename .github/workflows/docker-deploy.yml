@@ -6,8 +6,8 @@ name: Publish Releases to Hub
 on:
   push:
     tags:
-      - "v[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$"
-
+      - "v*.*.*"
+      
 jobs:
   docker:
     runs-on: windows-2019
