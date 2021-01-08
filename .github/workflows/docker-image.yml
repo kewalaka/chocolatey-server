@@ -15,7 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker-compose up -d
+      run: |
+        docker build . --file Dockerfile --tag chocolatey-server:latest
+        docker run --name chocolatey-server --rm -d -p 8000:80 chocolatey-server:latest
 
     - name: Run tests
       run: Invoke-Pester -Path .\Tests -Output Detailed
