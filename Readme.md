@@ -41,7 +41,7 @@ docker build . -t chocolatey-server
 
 ```powershell
 # run detached on localhost:80:
-docker run --name chocolatey.server --rm -d -p 80:80 chocolateyserver:latest
+docker run --name chocolatey-server --rm -d -p 80:80 chocolateyserver:latest
 
 # run on localhost:8000 interactively using a dynamic name:
 docker run --rm -it -p 8000:80 chocolatey-server:latest
@@ -56,6 +56,10 @@ A [test package](https://github.com/kewalaka/chocolatey-server/tree/main/Tests/T
 * The test package can be uploaded to the server using 'choco push'
 * The test package can be found using 'choco search'
 * The test package can be installed and removed from the server using 'choco install' & 'choco uninstall'
+
+Example test run:
+
+![Tests completed by Pester](https://gist.github.com/kewalaka/656f3a97aea3eed22ffece16d3431a4f/raw/63df66deb923ab76def2478074e52a4689d17fd2/chocolatey-server-tests.png)
 
 ### Looking inside
 
