@@ -2,22 +2,30 @@ name: Build & Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
+    paths-ignore:
+      - "*.md"
+      - "catalog-info.yaml"
+      - "LICENSE"
+      - "docs/**"
   pull_request:
-    branches: [ main ]
+    branches: [main]
+    paths-ignore:
+      - "*.md"
+      - "catalog-info.yaml"
+      - "LICENSE"
+      - "docs/**"
 
 jobs:
-
   build:
-
     runs-on: windows-2019
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: |
-        docker build . --file Dockerfile --tag chocolatey-server:latest
-        docker run --name chocolatey-server --rm -d -p 8000:80 chocolatey-server:latest
+      - uses: actions/checkout@v2
+      - name: Build the Docker image
+        run: |
+          docker build . --file Dockerfile --tag chocolatey-server:latest
+          docker run --name chocolatey-server --rm -d -p 8000:80 chocolatey-server:latest
 
-    - name: Run tests
-      run: Invoke-Pester -Path .\Tests -Output Detailed
+      - name: Run tests
+        run: Invoke-Pester -Path .\Tests -Output Detailed
