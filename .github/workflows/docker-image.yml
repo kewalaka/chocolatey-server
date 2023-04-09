@@ -6,6 +6,7 @@ on:
     paths-ignore:
       - "*.md"
       - "catalog-info.yaml"
+      - "mkdocs.yml"
       - "LICENSE"
       - "docs/**"
   pull_request:
@@ -13,6 +14,7 @@ on:
     paths-ignore:
       - "*.md"
       - "catalog-info.yaml"
+      - "mkdocs.yml"
       - "LICENSE"
       - "docs/**"
 

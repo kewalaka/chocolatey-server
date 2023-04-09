@@ -1,0 +1,9 @@
+site_name: "chocolatey-server-docs"
+
+nav:
+  - Home: index.md
+  - Install: install.md
+  - Tests: tests.md
+
+plugins:
+  - techdocs-core
